@@ -1,0 +1,30 @@
+/* Simple text container styles */
+.text-container {
+  line-height: 1.5;
+  position: relative;
+  z-index: 10;
+  padding: 0.5em 0;
+}
+
+/* Hero title text effect */
+.hero-title {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure the container has enough space for the animation */
+.hero-content {
+  min-height: 300px;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .split-char {
+    transition-duration: 0.5s;
+  }
+
+  .split-text-container {
+    padding: 0.25em 0;
+  }
+}

@@ -1,0 +1,206 @@
+/* 3D Card animations */
+.card-3d {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: float 10s ease-in-out infinite;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+
+.card-1 {
+  width: 200px;
+  height: 120px;
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+  transform: rotate(-10deg);
+}
+
+.card-2 {
+  width: 180px;
+  height: 100px;
+  top: 40%;
+  right: 15%;
+  animation-delay: 2s;
+  transform: rotate(15deg);
+}
+
+.card-3 {
+  width: 150px;
+  height: 90px;
+  bottom: 25%;
+  left: 20%;
+  animation-delay: 1s;
+  transform: rotate(5deg);
+}
+
+.card-4 {
+  width: 160px;
+  height: 95px;
+  top: 15%;
+  right: 25%;
+  animation-delay: 3s;
+  transform: rotate(-5deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(var(--rotation, 0deg)) translateZ(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(var(--rotation, 0deg)) translateZ(20px);
+  }
+  100% {
+    transform: translateY(0px) rotate(var(--rotation, 0deg)) translateZ(0);
+  }
+}
+
+/* NFC Waves */
+.nfc-wave {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px dashed rgba(100, 100, 255, 0.2);
+  opacity: 0.5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.dark .nfc-wave {
+  border: 2px dashed rgba(150, 150, 255, 0.2);
+}
+
+.wave-1 {
+  width: 300px;
+  height: 300px;
+  animation: pulse 8s linear infinite;
+}
+
+.wave-2 {
+  width: 500px;
+  height: 500px;
+  animation: pulse 8s linear infinite;
+  animation-delay: 2s;
+}
+
+.wave-3 {
+  width: 700px;
+  height: 700px;
+  animation: pulse 8s linear infinite;
+  animation-delay: 4s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+/* Hero section with 3D elements */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero title container with floating cards */
+.hero-title-wrapper {
+  margin: 2rem auto;
+  max-width: 90%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.hero-title-container {
+  transform-style: preserve-3d;
+  cursor: default;
+  border-radius: 1rem;
+  overflow: visible;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dark .hero-title-container {
+  background: linear-gradient(135deg, rgba(30, 30, 60, 0.4), rgba(30, 30, 60, 0.2));
+  border: 1px solid rgba(100, 100, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating card styles */
+.floating-card,
+.profile-card-preview {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Profile card preview specific styles */
+.profile-card-preview {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dark .profile-card-preview {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Add 3D text effect */
+.hero-title {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Glow animation for the hero title */
+.hero-title {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(100, 100, 255, 0.1), 0 0 10px rgba(100, 100, 255, 0.1);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(100, 100, 255, 0.2), 0 0 20px rgba(100, 100, 255, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-1, .card-2, .card-3, .card-4 {
+    transform: scale(0.7);
+  }
+  
+  .wave-1 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .wave-2 {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .wave-3 {
+    width: 500px;
+    height: 500px;
+  }
+}
