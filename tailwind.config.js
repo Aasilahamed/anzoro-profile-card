@@ -109,11 +109,11 @@ module.exports = {
         "pulse-glow": {
           "0%, 100%": {
             opacity: 1,
-            boxShadow: "0 0 0 0 rgba(79, 70, 229, 0.7)"
+            boxShadow: "0 0 0 0 rgba(16, 185, 129, 0.7)"
           },
           "50%": {
             opacity: 0.8,
-            boxShadow: "0 0 0 15px rgba(79, 70, 229, 0)"
+            boxShadow: "0 0 0 15px rgba(16, 185, 129, 0)"
           },
         },
         "spin-slow": {
